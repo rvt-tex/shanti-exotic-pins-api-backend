@@ -14,6 +14,12 @@ class ExoticsController < ApplicationController
         end 
     end 
 
+    def destroy
+        exotic = Exotic.find_by(id: params[:exotic_id])
+        exotic.delete
+        redirect_to exotics_path
+    end
+
     private
     def exotic_params
         params.require(:exotic).permit(:title, :description, :image_url, :brand_id)
