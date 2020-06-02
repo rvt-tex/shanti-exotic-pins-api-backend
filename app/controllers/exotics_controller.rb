@@ -2,7 +2,8 @@ class ExoticsController < ApplicationController
 
     def index 
         exotics = Exotic.all 
-        render json: exotics
+        # render json: exotics
+        render json: ExoticSerializer.new(exotics)
     end 
 
     def create 

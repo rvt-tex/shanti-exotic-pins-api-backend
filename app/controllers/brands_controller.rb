@@ -2,7 +2,8 @@ class BrandsController < ApplicationController
 
     def index 
         brands = Brand.all 
-        render json: brands
+        # render json: brands
+        render json: BrandSerializer.new(brands)
     end 
 
     def create 
