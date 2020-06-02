@@ -4,4 +4,6 @@ class BrandsController < ApplicationController
         brands = Brand.all 
         render json: brands
     end 
+
+
 end
